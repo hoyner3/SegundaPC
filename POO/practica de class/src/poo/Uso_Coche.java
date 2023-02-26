@@ -1,5 +1,5 @@
 package poo;
-import java.util.Scanner;
+//import java.util.Scanner;
 public class Uso_Coche {
     public static void main(String[] args) {
         // este es el objeto
@@ -16,15 +16,16 @@ public class Uso_Coche {
         System.out.println(micoche.dime_color());
     
         System.out.println("El asiento es de cuero 1. Si 2. No");
+        micoche.configura_asientos("si");
         //este objeto es para leer el teclado
-        Scanner entrada = new Scanner(System.in);
+       /* Scanner entrada = new Scanner(System.in);
         int asiento = entrada.nextInt();//lee el teclado y lo 
 
         if(asiento == 1){
             micoche.configura_asientos("si");
         }else{
             micoche.configura_asientos("no");
-        }
+        }*/
 
         System.out.println(micoche.dime_asientos());
         
