@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "*.java": "java",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "thread": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
