@@ -42,7 +42,7 @@ void subMenuInsertar(){//Submenu para elegir la lista a llenar
     switch(opcion1){
       case 1://Crea y manda 15 numeros random para llenar lista 1
         int numRandom1[15];
-        sleep_for(seconds(1));
+        //sleep_for(seconds(1));
         srand(time(0));
         for (int i = 0; i < 15; i++)
           numRandom1[i] = rand() % 100 + 1;
@@ -124,8 +124,8 @@ int listaSumaMayor(numero* lista) {
 int main(){
   int opcion;
 	cout<<"\nBienvenido";
-	cout<<"\nPor favor elija la ejecución que desea ejecutar\n";
-	cout<<"1. Llenar listas 1 a 1 \n2. Imprimir lista por parámetros \n3. Ver multiplos de 3 y 5 de cada lista \n4. Ver cual lista tiene la mayor sumatoria \n5. Combinación de ejercicio #1 y #3 \n6. Salir \n";
+	cout<<"\nPor favor elija la ejecuciï¿½n que desea ejecutar\n";
+	cout<<"1. Llenar listas 1 a 1 \n2. Imprimir lista por parï¿½metros \n3. Ver multiplos de 3 y 5 de cada lista \n4. Ver cual lista tiene la mayor sumatoria \n5. Combinaciï¿½n de ejercicio #1 y #3 \n6. Salir \n";
 	cin>>opcion;
 	cin.ignore();
 	if (opcion == 1)

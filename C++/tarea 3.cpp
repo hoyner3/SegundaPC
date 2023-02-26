@@ -1,9 +1,12 @@
 #include <iostream>
 #include<ctime>
 #include <cstdlib>
-#include <unistd.h> // para la función sleep()
-
+//#include <unistd.h> // para la función sleep()
+#include <chrono>
+#include <thread>
 using namespace std;
+using namespace std::this_thread;
+using namespace std::chrono;
 //Declare tres listas simples de enteros.
 struct listas{ //Estructura de la lista
     int numero;
@@ -16,11 +19,11 @@ struct listas{ //Estructura de la lista
 
 }*lista1, *lista2, *lista3;
 //funcion de numeros aleatorios
-int aleatorio(){
-    int numRandom = 0;
-    srand(time(NULL));
-    numRandom = 1 + rand() % 100;
-    return numRandom;
+int aleatorio(int num){
+    
+    
+    num = 1 + rand() % 100;
+    return num;
 }
 //Realice un único método de inserción al final de la lista, la lista debe recibirla por parámetro para saber en cual desea insertar.
 listas* insertarFinal(int num, listas *lista){
@@ -38,40 +41,15 @@ listas* insertarFinal(int num, listas *lista){
 }
 //Metodo para insertar el numero aleatorio en la lista
 listas *listaAleatoria(listas *lista){
-    cout << "[";
-    int num = 0;
-    int cont1 = 0;
+    int num;
+    srand(time(0));
     for (int i = 0; i < 15; i++){
-        num = aleatorio();
-        sleep(1); // pausar la ejecución por dos segundos
-        cout<<"#";
-        if (cont1 == 0){
-            num = aleatorio();
-            cont1++;
-        }
-        else if (cont1 == 1){
-            if (num <= 70){
-                num += 20;
-            }
-            else {
-                num -= 20;
-            }
-            cont1++;
+        num = aleatorio(num);
 
-        }
-        else if (cont1 == 2){
-            if (num <= 60){
-                num += 30;
-            }
-            else {
-                num -= 30;
-            }
-            cont1 = 0;
-        }
-
+        //sleep_for(seconds(1)); // pausar la ejecución por dos segundos
+       
         lista = insertarFinal(num, lista);
     }
-    cout << "]" << endl;
     return lista;
 }
 //Imprimir la lista deseada.
@@ -208,12 +186,14 @@ int main(){
            
             if (cont == 0){
                 cout << "Inicializando listas..." << endl;
-                cout <<"Se puede tardar 45 segundos en inicializar las listas espere por favor..."<< endl;
-                cout << "Lista 1: ";
+                sleep_for(seconds(1));
+                
                 lista1 = listaAleatoria(lista1);
-                cout << "Lista 2: ";
+                sleep_for(seconds(1));
+                
                 lista2 = listaAleatoria(lista2);
-                cout << "Lista 3: ";
+                sleep_for(seconds(1));
+                
                 lista3 = listaAleatoria(lista3);
                 cout <<endl<<endl;
                 cont++;
