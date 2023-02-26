@@ -42,7 +42,7 @@ listas* insertarFinal(int num, listas *lista){
 //Metodo para insertar el numero aleatorio en la lista
 listas *listaAleatoria(listas *lista){
     int num;
-    srand(time(0));
+    srand(time(NULL));
     for (int i = 0; i < 15; i++){
         num = aleatorio(num);
 
